@@ -41,7 +41,7 @@ def get_cfg_prompt(prompts: list):
 
 
 def get_inference_prompt(
-    midi_dict: MidiDict, tokenizer: AbsTokenizer, prompt_len_ms: int
+    midi_dict: MidiDict, tokenizer: AbsTokenizer, prompt_len_ms: float
 ):
     midi_dict.note_msgs = [
         msg

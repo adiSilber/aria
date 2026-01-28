@@ -245,6 +245,9 @@ def sample_batch_cfg(
     print(
         f"Using hyperparams: temp={temp}, top_p={top_p}, min_p={min_p}, cfg={cfg_gamma}, gen_len={max_new_tokens}"
     )
+    print(
+        f"Model input: {prompt_len} prompt tokens + {embedding_offset} embedding position = {prompt_len + embedding_offset} total input positions"
+    )
 
     CFG_WARM_UP_STEPS = min(250, max_new_tokens)
     curr_step = 0

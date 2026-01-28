@@ -26,9 +26,9 @@ def _parse_generate_args():
     )
     argp.add_argument(
         "--prompt_duration",
-        help="length of the input MIDI prompt, in seconds",
-        type=int,
-        default=15,
+        help="length of the input MIDI prompt, in seconds (supports decimal values, e.g., 6.5)",
+        type=float,
+        default=15.0,
     )
     argp.add_argument(
         "--variations",
@@ -74,7 +74,17 @@ def _parse_generate_args():
         "--save_dir",
         type=str,
         default=".",
-        help="directory to save generated MIDI files",
+        help="directory to save generated MIDI files, or full path to save a single file (when variations=1)",
+    )
+    argp.add_argument(
+        "--verbose",
+        action="store_true",
+        help="show detailed information about prompt tokens and timing",
+    )
+    argp.add_argument(
+        "--print_tokens",
+        action="store_true",
+        help="print all prompt tokens",
     )
 
     return argp.parse_args(sys.argv[2:])
@@ -100,9 +110,9 @@ def _parse_conditioned_generate_args():
     )
     argp.add_argument(
         "--prompt_duration",
-        help="length of the input MIDI prompt, in seconds",
-        type=int,
-        default=15,
+        help="length of the input MIDI prompt, in seconds (supports decimal values, e.g., 6.5)",
+        type=float,
+        default=15.0,
     )
     argp.add_argument(
         "--embedding_model_checkpoint_path",
@@ -164,7 +174,17 @@ def _parse_conditioned_generate_args():
         "--save_dir",
         type=str,
         default=".",
-        help="directory to save generated MIDI files",
+        help="directory to save generated MIDI files, or full path to save a single file (when variations=1)",
+    )
+    argp.add_argument(
+        "--verbose",
+        action="store_true",
+        help="show detailed information about prompt tokens and timing",
+    )
+    argp.add_argument(
+        "--print_tokens",
+        action="store_true",
+        help="print all prompt tokens",
     )
 
     return argp.parse_args(sys.argv[2:])
@@ -172,7 +192,7 @@ def _parse_conditioned_generate_args():
 
 def _get_prompt(
     midi_path: str,
-    prompt_duration_s: int,
+    prompt_duration_s: float,
 ):
     from ariautils.midi import MidiDict
     from ariautils.tokenizer import AbsTokenizer
@@ -181,7 +201,7 @@ def _get_prompt(
     return get_inference_prompt(
         midi_dict=MidiDict.from_midi(midi_path),
         tokenizer=AbsTokenizer(),
-        prompt_len_ms=1e3 * prompt_duration_s,
+        prompt_len_ms=1000.0 * prompt_duration_s,
     )
 
 
@@ -256,14 +276,56 @@ def generate(args):
     assert num_variations > 0
     assert prompt_duration_s >= 0
     assert max_new_tokens > 0
-    assert os.path.isdir(args.save_dir)
+    # Check if save_dir is a directory or a file path
+    if os.path.isdir(args.save_dir):
+        save_dir = args.save_dir
+        is_file_path = False
+    else:
+        # It's a file path, check that parent directory exists
+        save_dir = os.path.dirname(args.save_dir) or "."
+        is_file_path = True
+        assert os.path.isdir(save_dir), f"Parent directory of {args.save_dir} does not exist"
+        if num_variations > 1:
+            # If multiple variations, use directory and warn
+            print(f"Warning: Multiple variations requested but file path provided. Using directory: {save_dir}")
+            is_file_path = False
 
     tokenizer = AbsTokenizer()
     prompt = _get_prompt(
         args.prompt_midi_path,
         prompt_duration_s=prompt_duration_s,
     )
-    print(prompt)
+    
+    if args.verbose:
+        from ariautils.midi import MidiDict
+        midi_dict = MidiDict.from_midi(args.prompt_midi_path)
+        prompt_len_ms = 1000.0 * prompt_duration_s
+        included_notes = [
+            msg for msg in midi_dict.note_msgs
+            if midi_dict.tick_to_ms(msg["data"]["start"]) <= prompt_len_ms
+        ]
+        if included_notes:
+            first_note_ms = midi_dict.tick_to_ms(included_notes[0]["data"]["start"])
+            last_note_ms = midi_dict.tick_to_ms(included_notes[-1]["data"]["start"])
+            print(f"\n=== Prompt Token Information ===")
+            print(f"Requested duration: {prompt_duration_s:.3f} seconds ({prompt_len_ms} ms)")
+            print(f"Number of tokens in prompt: {len(prompt)}")
+            print(f"Notes included: {len(included_notes)}")
+            if included_notes:
+                print(f"First note at: {first_note_ms/1000:.3f}s")
+                print(f"Last note at: {last_note_ms/1000:.3f}s")
+            print(f"Token sequence (first 20): {prompt[:20]}")
+            print(f"Token sequence (last 20): {prompt[-20:]}")
+            print("=" * 32 + "\n")
+    else:
+        print(f"Prompt tokens: {len(prompt)} tokens")
+    
+    if args.print_tokens:
+        print(f"\n=== All Prompt Tokens ({len(prompt)} tokens) ===")
+        for i, token in enumerate(prompt):
+            print(f"[{i:4d}] {token}")
+        print("=" * 50 + "\n")
+    
     max_new_tokens = min(8096 - len(prompt), max_new_tokens)
 
     if backend == "torch_cuda":
@@ -277,6 +339,7 @@ def generate(args):
             config_name="medium",
             strict=False,
         )
+        # print(f"Model: {model}")
         results = sample_batch_t(
             model=model,
             tokenizer=tokenizer,
@@ -312,9 +375,17 @@ def generate(args):
     for idx, tokenized_seq in enumerate(results):
         res_midi_dict = tokenizer.detokenize(tokenized_seq)
         res_midi = res_midi_dict.to_midi()
-        res_midi.save(os.path.join(args.save_dir, f"res_{idx + 1}.mid"))
+        if is_file_path and idx == 0:
+            # Save to the exact file path provided
+            res_midi.save(args.save_dir)
+        else:
+            # Save to directory with numbered filename
+            res_midi.save(os.path.join(save_dir, f"res_{idx + 1}.mid"))
 
-    print(f"Results saved to {os.path.realpath(args.save_dir)}")
+    if is_file_path:
+        print(f"Result saved to {os.path.realpath(args.save_dir)}")
+    else:
+        print(f"Results saved to {os.path.realpath(save_dir)}")
 
 
 def _get_embedding(
@@ -346,17 +417,65 @@ def conditioned_generate(args):
     assert num_variations > 0
     assert prompt_duration_s >= 0
     assert max_new_tokens > 0
-    assert os.path.isdir(args.save_dir)
+    # Check if save_dir is a directory or a file path
+    if os.path.isdir(args.save_dir):
+        save_dir = args.save_dir
+        is_file_path = False
+    else:
+        # It's a file path, check that parent directory exists
+        save_dir = os.path.dirname(args.save_dir) or "."
+        is_file_path = True
+        assert os.path.isdir(save_dir), f"Parent directory of {args.save_dir} does not exist"
+        if num_variations > 1:
+            # If multiple variations, use directory and warn
+            print(f"Warning: Multiple variations requested but file path provided. Using directory: {save_dir}")
+            is_file_path = False
 
     tokenizer = AbsTokenizer()
     prompt = _get_prompt(
         args.prompt_midi_path,
         prompt_duration_s=prompt_duration_s,
     )
+    
+    if args.verbose:
+        from ariautils.midi import MidiDict
+        midi_dict = MidiDict.from_midi(args.prompt_midi_path)
+        prompt_len_ms = 1000.0 * prompt_duration_s
+        included_notes = [
+            msg for msg in midi_dict.note_msgs
+            if midi_dict.tick_to_ms(msg["data"]["start"]) <= prompt_len_ms
+        ]
+        if included_notes:
+            first_note_ms = midi_dict.tick_to_ms(included_notes[0]["data"]["start"])
+            last_note_ms = midi_dict.tick_to_ms(included_notes[-1]["data"]["start"])
+            print(f"\n=== Prompt Token Information ===")
+            print(f"Requested duration: {prompt_duration_s:.3f} seconds ({prompt_len_ms} ms)")
+            print(f"Number of tokens in prompt: {len(prompt)}")
+            print(f"Notes included: {len(included_notes)}")
+            if included_notes:
+                print(f"First note at: {first_note_ms/1000:.3f}s")
+                print(f"Last note at: {last_note_ms/1000:.3f}s")
+            print(f"Token sequence (first 20): {prompt[:20]}")
+            print(f"Token sequence (last 20): {prompt[-20:]}")
+            print("=" * 32 + "\n")
+    else:
+        print(f"Prompt tokens: {len(prompt)} tokens")
+    
+    if args.print_tokens:
+        print(f"\n=== All Prompt Tokens ({len(prompt)} tokens) ===")
+        for i, token in enumerate(prompt):
+            print(f"[{i:4d}] {token}")
+        print("=" * 50 + "\n")
+    
     embedding = _get_embedding(
         embedding_model_checkpoint_path=args.embedding_model_checkpoint_path,
         embedding_midi_path=args.embedding_midi_path,
     )
+    # Print total input tokens/positions to model
+    # The embedding takes position 0, prompt tokens start at position 1
+    embedding_offset = 1
+    total_input_positions = len(prompt) + embedding_offset
+    print(f"Total input positions to model: {total_input_positions} (embedding: {embedding_offset} + prompt tokens: {len(prompt)})")
     max_new_tokens = min(8096 - len(prompt), max_new_tokens)
 
     if backend == "torch_cuda":
@@ -414,9 +533,17 @@ def conditioned_generate(args):
     for idx, tokenized_seq in enumerate(results):
         res_midi_dict = tokenizer.detokenize(tokenized_seq)
         res_midi = res_midi_dict.to_midi()
-        res_midi.save(os.path.join(args.save_dir, f"res_{idx + 1}.mid"))
+        if is_file_path and idx == 0:
+            # Save to the exact file path provided
+            res_midi.save(args.save_dir)
+        else:
+            # Save to directory with numbered filename
+            res_midi.save(os.path.join(save_dir, f"res_{idx + 1}.mid"))
 
-    print(f"Results saved to {os.path.realpath(args.save_dir)}")
+    if is_file_path:
+        print(f"Result saved to {os.path.realpath(args.save_dir)}")
+    else:
+        print(f"Results saved to {os.path.realpath(save_dir)}")
 
 
 def _parse_midi_dataset_args():
