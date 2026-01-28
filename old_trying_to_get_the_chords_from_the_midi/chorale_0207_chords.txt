@@ -1,0 +1,193 @@
+File: jsb_chorales_midi/train_16th/chorale_0207.mid
+Key: G major
+------------------------------------------------------------
+Tick   | Chord Name                     | Function
+------------------------------------------------------------
+0      | G-major triad                  | I
+1      | G-major triad                  | I
+2      | G-major seventh chord          | I42
+3      | G-major seventh chord          | I42
+4      | C-major triad                  | IV6
+5      | C-major triad                  | IV6
+6      | C-all-interval tetrachord      | IV752
+7      | C-all-interval tetrachord      | IV752
+8      | G-major triad                  | I
+9      | G-major triad                  | I
+10     | E-minor triad                  | vi6
+11     | E-minor triad                  | vi6
+12     | D-major triad                  | V
+13     | D-major triad                  | V
+14     | D-major triad                  | V
+15     | D-major triad                  | V
+16     | E-minor triad                  | vi
+17     | E-minor triad                  | vi
+18     | E-minor seventh chord          | vi42
+19     | E-minor seventh chord          | vi42
+20     | C-major triad                  | IV
+21     | C-major triad                  | IV
+22     | Perfect Fifth with octave doublings above C | iv5
+23     | Perfect Fifth with octave doublings above C | iv5
+24     | G-major triad                  | I
+25     | G-major triad                  | I
+26     | G-dominant seventh chord       | Ib753
+27     | G-dominant seventh chord       | Ib753
+28     | C-major triad                  | IV
+29     | C-major triad                  | IV
+30     | C-major triad                  | IV
+31     | C-major triad                  | IV
+32     | Rest                           | -
+33     | Rest                           | -
+34     | Rest                           | -
+35     | Rest                           | -
+36     | C-major triad                  | IV
+37     | C-major triad                  | IV
+38     | C-major triad                  | IV
+39     | C-major triad                  | IV
+40     | E-minor triad                  | vi
+41     | E-minor triad                  | vi
+42     | A-minor triad                  | ii64
+43     | A-minor triad                  | ii64
+44     | B-diminished triad             | iiio6
+45     | B-diminished triad             | iiio6
+46     | B-diminished triad             | iiio6
+47     | B-diminished triad             | iiio6
+48     | C-major triad                  | IV
+49     | C-major triad                  | IV
+50     | C-major seventh chord          | IV7
+51     | C-major seventh chord          | IV7
+52     | D-major triad                  | V6
+53     | D-major triad                  | V6
+54     | D-dominant seventh chord       | V65
+55     | D-dominant seventh chord       | V65
+56     | G-major triad                  | I
+57     | G-major triad                  | I
+58     | G-major triad                  | I6
+59     | G-major triad                  | I6
+60     | D-major triad                  | V
+61     | D-major triad                  | V
+62     | D-dominant seventh chord       | V7
+63     | D-dominant seventh chord       | V7
+64     | G-major triad                  | I
+65     | G-major triad                  | I
+66     | G-major triad                  | I
+67     | G-major triad                  | I
+68     | G-major triad                  | I6
+69     | G-major triad                  | I6
+70     | E-minor triad                  | vi64
+71     | E-minor triad                  | vi64
+72     | F#-diminished triad            | viio6
+73     | F#-diminished triad            | viio6
+74     | F#-diminished triad            | viio6
+75     | F#-diminished triad            | viio6
+76     | G-major triad                  | I
+77     | G-major triad                  | I
+78     | A-incomplete minor-seventh chord | ii7
+79     | A-incomplete minor-seventh chord | ii7
+80     | G-major triad                  | I6
+81     | G-major triad                  | I6
+82     | C-quartal trichord             | iv52
+83     | C-quartal trichord             | iv52
+84     | D-major triad                  | V
+85     | D-major triad                  | V
+86     | A-perfect-fourth minor tetrachord | ii632
+87     | A-perfect-fourth minor tetrachord | ii632
+88     | G-major triad                  | I6
+89     | G-major triad                  | I6
+90     | G-major seventh chord          | I7
+91     | G-major seventh chord          | I7
+92     | A-major triad                  | II
+93     | A-major triad                  | II
+94     | A-dominant seventh chord       | II75#3
+95     | A-dominant seventh chord       | II75#3
+96     | D-major triad                  | V
+97     | D-major triad                  | V
+98     | D-major triad                  | V
+99     | D-major triad                  | V
+100    | Rest                           | -
+101    | Rest                           | -
+102    | D-major triad                  | V
+103    | D-major triad                  | V
+104    | E-quartal tetramirror          | vi743
+105    | E-quartal tetramirror          | vi743
+106    | D-major triad                  | V6
+107    | D-major triad                  | V6
+108    | G-major-second major tetrachord | I532
+109    | G-major-second major tetrachord | I532
+110    | Major Third with octave doublings above A | II#3
+111    | Major Third with octave doublings above A | II#3
+112    | A-major triad                  | II6
+113    | A-major triad                  | II6
+114    | D-major triad                  | V
+115    | D-major triad                  | V
+116    | D-dominant seventh chord       | V42
+117    | D-dominant seventh chord       | V42
+118    | G-major triad                  | I6
+119    | G-major triad                  | I6
+120    | G-major triad                  | I6
+121    | G-major triad                  | I6
+122    | A-minor triad                  | ii
+123    | A-minor triad                  | ii
+124    | G-major triad                  | I6
+125    | G-major triad                  | I6
+126    | A-minor seventh chord          | ii65
+127    | A-minor seventh chord          | ii65
+128    | D-major triad                  | V
+129    | D-major triad                  | V
+130    | E-incomplete minor-seventh chord | vi7
+131    | E-incomplete minor-seventh chord | vi7
+132    | F#-diminished triad            | viio
+133    | F#-diminished triad            | viio
+134    | Major Third with octave doublings above G | I
+135    | Major Third with octave doublings above G | I
+136    | C-incomplete major-seventh chord | iv43
+137    | C-incomplete major-seventh chord | iv43
+138    | D-major triad                  | V
+139    | D-major triad                  | V
+140    | D-major triad                  | V
+141    | D-major triad                  | V
+142    | D-major triad                  | V
+143    | D-major triad                  | V
+144    | D-major triad                  | V
+145    | D-major triad                  | V
+146    | G-major triad                  | I6
+147    | G-major triad                  | I6
+148    | E-quartal tetramirror          | vi754
+149    | E-quartal tetramirror          | vi754
+150    | G-incomplete dominant-seventh chord | Ib73
+151    | G-incomplete dominant-seventh chord | Ib73
+152    | G-incomplete dominant-seventh chord | Ib73
+153    | G-incomplete dominant-seventh chord | Ib73
+154    | C-major triad                  | IV
+155    | C-major triad                  | IV
+156    | Minor Third with octave doublings above E | vi
+157    | E-incomplete minor-seventh chord | vi42
+158    | C-major triad                  | IV
+159    | C-major triad                  | IV
+160    | C-major triad                  | IV
+161    | C-major triad                  | IV
+162    | G-major triad                  | I
+163    | G-major triad                  | I
+164    | G-major triad                  | I
+165    | G-major triad                  | I
+166    | G                              | i
+167    | G                              | i
+168    | G                              | i
+169    | G                              | i
+170    | G-major triad                  | I
+171    | G-major triad                  | I
+172    | G-major triad                  | I
+173    | G-major triad                  | I
+174    | Rest                           | -
+175    | Rest                           | -
+176    | Rest                           | -
+177    | Rest                           | -
+178    | Rest                           | -
+179    | Rest                           | -
+180    | Rest                           | -
+181    | Rest                           | -
+182    | Rest                           | -
+183    | Rest                           | -
+184    | Rest                           | -
+185    | Rest                           | -
+Strong Cadences: []
+Regular Cadences: [56, 64, 108]

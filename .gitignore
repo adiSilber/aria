@@ -180,8 +180,6 @@ jsb_chorales_xml/*
 !jsb_chorales_xml/.gitkeep
 aria/jsb_data/*
 !aria/jsb_data/.gitkeep
-old_trying_to_get_the_chords_from_the_midi/*
-!old_trying_to_get_the_chords_from_the_midi/.gitkeep
 trying_to_get_the_chords_from_the_midi/*
 !trying_to_get_the_chords_from_the_midi/.gitkeep
 chorale_continuations/*

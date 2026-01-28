@@ -1,0 +1,215 @@
+File: jsb_chorales_midi/train_16th/chorale_0102.mid
+Key: E- major
+------------------------------------------------------------
+Tick   | Chord Name                     | Function
+------------------------------------------------------------
+0      | Eb-major triad                 | I
+1      | Eb-major triad                 | I
+2      | Eb-major-second major tetrachord | I742
+3      | Eb-major-second major tetrachord | I742
+4      | Eb-major triad                 | I6
+5      | Eb-major triad                 | I6
+6      | Eb-major triad                 | I
+7      | Eb-major triad                 | I
+8      | enharmonic equivalent to major triad above G# | vi+64
+9      | enharmonic equivalent to major triad above G# | vi+64
+10     | C-minor triad                  | vi64
+11     | C-minor triad                  | vi64
+12     | enharmonic equivalent to minor triad above G# | ii74
+13     | enharmonic equivalent to minor triad above G# | ii74
+14     | enharmonic equivalent to minor triad above F | ii5#2
+15     | enharmonic equivalent to minor triad above F | ii5#2
+16     | G#-German augmented sixth chord | #iiio6b5b3
+17     | G#-German augmented sixth chord | #iiio6b5b3
+18     | Eb-major seventh chord         | I43
+19     | Eb-major seventh chord         | I43
+20     | G#-German augmented sixth chord | #iiio6b5b3
+21     | G#-German augmented sixth chord | #iiio6b5b3
+22     | Eb-tritone quartal tetrachord  | i#643
+23     | Eb-Kumoi pentachord            | i#6543
+24     | Eb-major triad                 | I
+25     | Eb-major triad                 | I
+26     | Eb-major triad                 | I
+27     | Eb-major triad                 | I
+28     | Eb-major triad                 | I
+29     | Eb-major triad                 | I
+30     | Eb-major triad                 | I
+31     | Eb-major triad                 | I
+32     | Bb-major triad                 | V
+33     | Bb-major triad                 | V
+34     | C-quartal tetramirror          | vi743
+35     | C-quartal tetramirror          | vi743
+36     | Bb-major triad                 | V6
+37     | Bb-major triad                 | V6
+38     | G#-German augmented sixth chord | #iiio6b5b3
+39     | G#-German augmented sixth chord | #iiio6b5b3
+40     | C-major-second minor tetrachord | vi532
+41     | C-major-second minor tetrachord | vi532
+42     | C-major-second minor tetrachord | vi742
+43     | Eb-augmented triad             | I+64
+44     | C-minor triad                  | vi6
+45     | C-minor triad                  | vi6
+46     | F-dominant seventh chord       | II75#3
+47     | F-dominant seventh chord       | II75#3
+48     | G-minor triad                  | iii
+49     | G-minor triad                  | iii
+50     | Bb-major seventh chord         | V64#3
+51     | Bb-major seventh chord         | V64#3
+52     | C-minor seventh chord          | vi65
+53     | C-minor seventh chord          | vi65
+54     | C-lydian tetrachord            | vi732
+55     | C-lydian tetrachord            | vi732
+56     | Bb-quartal trichord            | v54
+57     | Bb-quartal trichord            | v54
+58     | F-quartal trichord             | ii52
+59     | F-quartal trichord             | ii52
+60     | F-major triad                  | II
+61     | F-major triad                  | II
+62     | F-dominant seventh chord       | II75#3
+63     | F-dominant seventh chord       | II75#3
+64     | Bb-major triad                 | V
+65     | Bb-major triad                 | V
+66     | Bb-major triad                 | V
+67     | Bb-major triad                 | V
+68     | Bb-major triad                 | V
+69     | Bb-major triad                 | V
+70     | Bb-major triad                 | V
+71     | Bb-major triad                 | V
+72     | Eb-major triad                 | I
+73     | Eb-major triad                 | I
+74     | Eb-quartal tetramirror         | i74#2
+75     | Eb-quartal tetramirror         | i74#2
+76     | Eb-major triad                 | I6
+77     | Eb-major triad                 | I6
+78     | Eb-major triad                 | I
+79     | Eb-major triad                 | I
+80     | enharmonic equivalent to major triad above G# | vi+64
+81     | enharmonic equivalent to major triad above G# | vi+64
+82     | C-minor seventh chord          | vi43
+83     | C-minor seventh chord          | vi43
+84     | enharmonic equivalent to minor triad above F | ii5#2
+85     | enharmonic equivalent to minor triad above F | ii5#2
+86     | enharmonic equivalent to major triad above Eb | vi+6#3
+87     | enharmonic equivalent to major triad above Eb | vi+6#3
+88     | G#-German augmented sixth chord in second inversion | #iiiob64b3
+89     | G#-German augmented sixth chord in second inversion | #iiiob64b3
+90     | E-diminished triad             | #io5b3
+91     | E-diminished triad             | #io5b3
+92     | Augmented Second with octave doublings above F | #iii2
+93     | Augmented Second with octave doublings above F | #iii2
+94     | G-incomplete minor-seventh chord | iii42
+95     | G-incomplete minor-seventh chord | iii42
+96     | C-major triad                  | VI
+97     | C-major triad                  | VI
+98     | C-major triad                  | VI
+99     | C-major triad                  | VI
+100    | C-major triad                  | VI
+101    | C-major triad                  | VI
+102    | C-major triad                  | VI
+103    | C-major triad                  | VI
+104    | E-diminished triad             | #io63b3
+105    | E-diminished triad             | #io63b3
+106    | G#-incomplete dominant-seventh chord | #iiib42
+107    | G#-incomplete dominant-seventh chord | #iiib42
+108    | E-diminished triad             | #io5b3
+109    | E-diminished triad             | #io5b3
+110    | C-dominant seventh chord       | VI75#3
+111    | C-dominant seventh chord       | VI75#3
+112    | enharmonic equivalent to minor triad above F | ii5#2
+113    | enharmonic equivalent to minor triad above F | ii5#2
+114    | enharmonic equivalent to major triad above Eb | vi+6#3
+115    | enharmonic equivalent to major triad above Eb | vi+6#3
+116    | G#-German augmented sixth chord in second inversion | #iiiob64b3
+117    | G#-German augmented sixth chord in second inversion | #iiiob64b3
+118    | G#-Italian augmented sixth chord | #iiio6b3
+119    | G#-Italian augmented sixth chord | #iiio6b3
+120    | Eb-major triad                 | I
+121    | Eb-major triad                 | I
+122    | Eb-major-second major tetrachord | I742
+123    | Eb-major-second major tetrachord | I742
+124    | enharmonic equivalent to minor seventh chord above G# | vi+764
+125    | enharmonic equivalent to minor seventh chord above G# | vi+764
+126    | Eb-lydian tetrachord           | i72#2
+127    | Eb-lydian tetrachord           | i72#2
+128    | Eb-quartal trichord            | i54
+129    | Eb-quartal trichord            | i54
+130    | Eb-major-second major tetrachord | I763
+131    | Eb-major-second major tetrachord | I763
+132    | G#-German augmented sixth chord | #iiio6b5b3
+133    | G#-German augmented sixth chord | #iiio6b5b3
+134    | G#-German augmented sixth chord | #iiio6b5b3
+135    | G#-German augmented sixth chord | #iiio6b5b3
+136    | Eb-major triad                 | I
+137    | Eb-major triad                 | I
+138    | Eb-major triad                 | I
+139    | Eb-major triad                 | I
+140    | Eb-major triad                 | I
+141    | Eb-major triad                 | I
+142    | Eb-major triad                 | I
+143    | Eb-major triad                 | I
+144    | Eb-major triad                 | I
+145    | Eb-major triad                 | I
+146    | C#-German augmented sixth chord in root position | #viø7
+147    | C#-German augmented sixth chord in root position | #viø7
+148    | C-minor seventh chord          | vi7
+149    | C-minor seventh chord          | vi7
+150    | Eb-major triad                 | I64
+151    | Eb-major triad                 | I64
+152    | enharmonic equivalent to major triad above G# | vi+64
+153    | enharmonic equivalent to major triad above G# | vi+64
+154    | enharmonic equivalent to major seventh chord above G | vi#864
+155    | enharmonic equivalent to major seventh chord above G | vi#864
+156    | enharmonic equivalent to minor triad above F | ii5#2
+157    | enharmonic equivalent to minor triad above F | ii5#2
+158    | C-perfect-fourth minor tetrachord | vi632
+159    | C-perfect-fourth minor tetrachord | vi632
+160    | B-diminished triad             | #vo6
+161    | B-diminished triad             | #vo6
+162    | D-incomplete minor-seventh chord | vii42
+163    | D-incomplete minor-seventh chord | vii42
+164    | G-major triad                  | III6
+165    | G-major triad                  | III6
+166    | Eb-augmented triad             | I+6
+167    | Eb-augmented seventh chord     | I+76#3
+168    | C-minor triad                  | vi
+169    | C-minor triad                  | vi
+170    | C-minor triad                  | vi
+171    | C-minor triad                  | vi
+172    | C-minor triad                  | vi
+173    | C-minor triad                  | vi
+174    | C-minor triad                  | vi
+175    | C-minor triad                  | vi
+176    | Eb-major triad                 | I
+177    | Eb-major triad                 | I
+178    | C#-German augmented sixth chord in root position | #viø7
+179    | C#-German augmented sixth chord in root position | #viø7
+180    | C-minor seventh chord          | vi7
+181    | C-minor seventh chord          | vi7
+182    | C-minor seventh chord          | vi42
+183    | C-minor-diminished ninth chord | vi642#2
+184    | enharmonic equivalent to major triad above G# | vi+64
+185    | enharmonic equivalent to major triad above G# | vi+64
+186    | Bb-major triad                 | V
+187    | Bb-major triad                 | V
+188    | enharmonic equivalent to major triad above C | vi+#53
+189    | enharmonic equivalent to major triad above C | vi+#53
+190    | Eb-major triad                 | I64
+191    | Eb-major triad                 | I64
+192    | enharmonic equivalent to minor seventh chord above G# | vi+764
+193    | enharmonic equivalent to minor seventh chord above G# | vi+764
+194    | enharmonic equivalent to major seventh chord above G# | vi+64
+195    | enharmonic equivalent to major triad above G# | vi+64
+196    | Bb-major triad                 | V
+197    | Bb-major triad                 | V
+198    | G#-German augmented sixth chord | #iiio6b5b3
+199    | G#-German augmented sixth chord | #iiio6b5b3
+200    | Eb-major triad                 | I
+201    | Eb-major triad                 | I
+202    | Eb-major triad                 | I
+203    | Eb-major triad                 | I
+204    | Eb-major triad                 | I
+205    | Eb-major triad                 | I
+206    | Eb-major triad                 | I
+207    | Eb-major triad                 | I
+Strong Cadences: []
+Regular Cadences: [72]

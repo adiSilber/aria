@@ -1,0 +1,325 @@
+File: jsb_chorales_midi/train_16th/chorale_0142.mid
+Key: F minor
+------------------------------------------------------------
+Tick   | Chord Name                     | Function
+------------------------------------------------------------
+0      | Bb-major triad                 | IV
+1      | Bb-major triad                 | IV
+2      | G-minor triad                  | ii6
+3      | G-minor triad                  | ii6
+4      | enharmonic equivalent to minor triad above F | i5#2
+5      | enharmonic equivalent to minor triad above F | i5#2
+6      | enharmonic equivalent to diminished triad above F | #iio62
+7      | enharmonic equivalent to diminished triad above F | #iio62
+8      | Eb-major triad                 | bVII
+9      | Eb-major triad                 | bVII
+10     | Eb-major triad                 | bVII
+11     | Eb-major triad                 | bVII
+12     | enharmonic equivalent to major triad above G# | v+64
+13     | enharmonic equivalent to major triad above G# | v+64
+14     | enharmonic equivalent to minor triad above G# | i74
+15     | enharmonic equivalent to minor triad above G# | i74
+16     | Eb-major triad                 | bVII6
+17     | Eb-major triad                 | bVII6
+18     | G-minor seventh chord          | ii#642
+19     | G-minor seventh chord          | ii#642
+20     | C-minor triad                  | v6
+21     | C-minor triad                  | v6
+22     | C-perfect-fourth minor tetrachord | v752
+23     | C-perfect-fourth minor tetrachord | v752
+24     | G-major triad                  | II
+25     | G-major triad                  | II
+26     | C-incomplete major-seventh chord | v4#3
+27     | C-incomplete major-seventh chord | v4#3
+28     | C-minor triad                  | v
+29     | C-minor triad                  | v
+30     | C-minor triad                  | v
+31     | C-minor triad                  | v
+32     | G-minor triad                  | ii
+33     | G-minor triad                  | ii
+34     | G-minor triad                  | ii
+35     | G-minor triad                  | ii
+36     | C-minor triad                  | v
+37     | C-minor triad                  | v
+38     | C-minor triad                  | v
+39     | C-minor triad                  | v
+40     | G-minor triad                  | ii63#3
+41     | G-minor triad                  | ii63#3
+42     | E-half-diminished seventh chord | viiø6#4#3
+43     | E-half-diminished seventh chord | viiø6#4#3
+44     | enharmonic equivalent to minor triad above G# | i74
+45     | enharmonic equivalent to minor triad above G# | i74
+46     | F-major-second minor tetrachord | i74
+47     | F-major-second minor tetrachord | i74
+48     | Bb-major triad                 | IV6
+49     | Bb-major triad                 | IV6
+50     | E-minor-second diminished tetrachord | viio532
+51     | E-minor-second diminished tetrachord | viio532
+52     | enharmonic equivalent to minor triad above F | i5#2
+53     | enharmonic equivalent to minor triad above F | i5#2
+54     | G#-incomplete dominant-seventh chord | #iib42
+55     | G#-incomplete dominant-seventh chord | #iib42
+56     | F-quartal trichord             | i54
+57     | F-quartal trichord             | i54
+58     | C-major triad                  | V
+59     | C-major triad                  | V
+60     | enharmonic equivalent to minor triad above F | i5#2
+61     | enharmonic equivalent to minor triad above F | i5#2
+62     | enharmonic equivalent to minor triad above F | i5#2
+63     | enharmonic equivalent to minor triad above F | i5#2
+64     | Rest                           | -
+65     | Rest                           | -
+66     | enharmonic equivalent to minor triad above F | i5#2
+67     | enharmonic equivalent to minor triad above F | i5#2
+68     | C-minor triad                  | v6
+69     | C-minor triad                  | v6
+70     | enharmonic equivalent to major triad above C# | i+#54
+71     | enharmonic equivalent to major triad above C# | i+#54
+72     | enharmonic equivalent to minor triad above C | i#54
+73     | enharmonic equivalent to minor triad above C | i#54
+74     | enharmonic equivalent to diminished triad above Bb | #vob62
+75     | enharmonic equivalent to diminished triad above Bb | #vob62
+76     | enharmonic equivalent to diminished triad above Bb | #vob62
+77     | enharmonic equivalent to diminished triad above Bb | #vob62
+78     | enharmonic equivalent to major triad above G# | v+64
+79     | enharmonic equivalent to major triad above G# | v+64
+80     | enharmonic equivalent to major triad above G# | v+64
+81     | enharmonic equivalent to major triad above G# | v+64
+82     | Eb-major triad                 | bVII
+83     | Eb-major triad                 | bVII
+84     | G-minor seventh chord          | ii43
+85     | G-minor seventh chord          | ii43
+86     | C-minor triad                  | v
+87     | C-minor triad                  | v
+88     | C-minor triad                  | v
+89     | C-minor triad                  | v
+90     | G-major triad                  | II
+91     | G-major triad                  | II
+92     | C-incomplete major-seventh chord | v4#3
+93     | C-incomplete major-seventh chord | v4#3
+94     | C-minor triad                  | v
+95     | C-minor triad                  | v
+96     | C-minor triad                  | v
+97     | C-minor triad                  | v
+98     | G-minor triad                  | ii
+99     | G-minor triad                  | ii
+100    | G-minor triad                  | ii
+101    | G-minor triad                  | ii
+102    | C-minor triad                  | v
+103    | C-minor triad                  | v
+104    | Minor Third with octave doublings above C | v
+105    | Minor Third with octave doublings above C | v
+106    | D-incomplete minor-seventh chord | vi7
+107    | D-incomplete minor-seventh chord | vi7
+108    | E-half-diminished seventh chord | viiø#753
+109    | E-half-diminished seventh chord | viiø#753
+110    | G#-perfect-fourth minor tetrachord | #iib5b42
+111    | G#-perfect-fourth minor tetrachord | #iib5b42
+112    | enharmonic equivalent to minor triad above F | i5#2
+113    | enharmonic equivalent to minor triad above F | i5#2
+114    | enharmonic equivalent to diminished triad above C# | #vob7b5
+115    | enharmonic equivalent to diminished triad above C# | #vob7b5
+116    | enharmonic equivalent to diminished triad above C# | #vb73
+117    | enharmonic equivalent to diminished triad above C# | #vb73
+118    | enharmonic equivalent to minor triad above C | i#54
+119    | enharmonic equivalent to minor triad above C | i#54
+120    | G#-perfect-fourth minor tetrachord | #ii6b5b2
+121    | G#-perfect-fourth minor tetrachord | #ii6b5b2
+122    | C-dominant seventh chord       | V75#3
+123    | C-dominant seventh chord       | V75#3
+124    | C-augmented major tetrachord   | V+5#5#3
+125    | C-augmented major tetrachord   | V+5#5#3
+126    | enharmonic equivalent to minor triad above F | i5#2
+127    | enharmonic equivalent to minor triad above F | i5#2
+128    | enharmonic equivalent to minor triad above F | i5#2
+129    | enharmonic equivalent to minor triad above F | i5#2
+130    | enharmonic equivalent to minor triad above F | i5#2
+131    | enharmonic equivalent to minor triad above F | i5#2
+132    | C-perfect-fourth minor tetrachord | v632
+133    | C-perfect-fourth minor tetrachord | v632
+134    | Bb-major triad                 | IV6
+135    | Bb-major triad                 | IV6
+136    | Bb-quartal trichord            | iv74
+137    | Bb-quartal trichord            | iv74
+138    | Perfect Fourth with octave doublings above Bb | bvii4
+139    | Perfect Fourth with octave doublings above Bb | bvii4
+140    | Major Third with octave doublings above Bb | IV#3
+141    | Major Third with octave doublings above Bb | IV#3
+142    | Eb-major triad                 | bVII
+143    | Eb-major triad                 | bVII
+144    | Eb-major-second major tetrachord | bVII532
+145    | Eb-major-second major tetrachord | bVII532
+146    | C-major-second minor tetrachord | v742
+147    | C-major-second minor tetrachord | v742
+148    | C-minor triad                  | v
+149    | C-minor triad                  | v
+150    | C-quartal trichord             | v#54
+151    | C-quartal trichord             | v#54
+152    | Perfect Fourth with octave doublings above G | v4
+153    | Perfect Fourth with octave doublings above G | v4
+154    | G-major triad                  | II
+155    | G-major triad                  | II
+156    | G-major triad                  | II
+157    | G-major triad                  | II
+158    | C-minor triad                  | v
+159    | C-minor triad                  | v
+160    | C-minor triad                  | v
+161    | C-minor triad                  | v
+162    | G                              | ii
+163    | G                              | ii
+164    | G                              | ii
+165    | G                              | ii
+166    | Rest                           | -
+167    | Rest                           | -
+168    | Rest                           | -
+169    | Rest                           | -
+170    | Minor Third with octave doublings above C | v
+171    | Minor Third with octave doublings above C | v
+172    | C-incomplete minor-seventh chord | v42
+173    | C-incomplete minor-seventh chord | v42
+174    | F-dominant seventh chord       | I65
+175    | F-dominant seventh chord       | I65
+176    | F-dominant seventh chord       | I65
+177    | F-dominant seventh chord       | I65
+178    | Bb-major triad                 | IV
+179    | Bb-major triad                 | IV
+180    | Bb-major triad                 | IV
+181    | Bb-major triad                 | IV
+182    | Eb-major triad                 | bVII
+183    | Eb-major triad                 | bVII
+184    | Bb-perfect-fourth major tetrachord | IV#752
+185    | Bb-perfect-fourth major tetrachord | IV#752
+186    | enharmonic equivalent to major triad above G# | v+64
+187    | enharmonic equivalent to major triad above G# | v+64
+188    | C-minor seventh chord          | v43
+189    | C-minor seventh chord          | v43
+190    | enharmonic equivalent to diminished triad above F | #iio62
+191    | enharmonic equivalent to diminished triad above F | #iio62
+192    | enharmonic equivalent to minor seventh chord above F | v+75#2
+193    | enharmonic equivalent to minor seventh chord above F | v+75#2
+194    | G-major triad                  | II5#53
+195    | G-major triad                  | II5#53
+196    | Eb-augmented major tetrachord  | bVII+6#5#3
+197    | G-dominant seventh chord       | II7#5#3
+198    | C-minor triad                  | v
+199    | C-minor triad                  | v
+200    | C-minor triad                  | v
+201    | C-minor triad                  | v
+202    | G-major triad                  | II
+203    | G-major triad                  | II
+204    | G-major triad                  | II
+205    | G-major triad                  | II
+206    | C-minor triad                  | v
+207    | C-minor triad                  | v
+208    | C-minor seventh chord          | v42
+209    | C-minor seventh chord          | v42
+210    | enharmonic equivalent to diminished triad above F | #iio62
+211    | enharmonic equivalent to diminished triad above F | #iio62
+212    | G-minor seventh chord          | ii7#53
+213    | G-minor seventh chord          | ii7#53
+214    | enharmonic equivalent to major triad above G# | v+64
+215    | enharmonic equivalent to major triad above G# | v+64
+216    | enharmonic equivalent to half-diminished seventh chord above G# | vi7#54
+217    | enharmonic equivalent to half-diminished seventh chord above G# | vi7#54
+218    | E-diminished triad             | viio#63
+219    | E-diminished triad             | viio#63
+220    | G-incomplete minor-seventh chord | ii42
+221    | G-incomplete minor-seventh chord | ii42
+222    | C-major triad                  | V6
+223    | C-major triad                  | V6
+224    | C-dominant seventh chord       | V65
+225    | C-dominant seventh chord       | V65
+226    | enharmonic equivalent to minor triad above F | i5#2
+227    | enharmonic equivalent to minor triad above F | i5#2
+228    | enharmonic equivalent to minor triad above F | i5#2
+229    | enharmonic equivalent to minor triad above F | i5#2
+230    | C-major triad                  | V
+231    | C-major triad                  | V
+232    | C-major triad                  | V
+233    | C-major triad                  | V
+234    | enharmonic equivalent to minor triad above F | i5#2
+235    | enharmonic equivalent to minor triad above F | i5#2
+236    | C-minor triad                  | v6
+237    | C-minor triad                  | v6
+238    | enharmonic equivalent to major triad above C# | i+#54
+239    | enharmonic equivalent to major triad above C# | i+#54
+240    | enharmonic equivalent to minor triad above C | i#54
+241    | enharmonic equivalent to minor triad above C | i#54
+242    | enharmonic equivalent to diminished triad above Bb | #vob62
+243    | enharmonic equivalent to diminished triad above Bb | #vob62
+244    | enharmonic equivalent to diminished triad above Bb | #vob62
+245    | enharmonic equivalent to diminished triad above Bb | #vob62
+246    | C-incomplete major-seventh chord | v+4
+247    | C-incomplete major-seventh chord | v+4
+248    | C-augmented seventh chord      | V+#643
+249    | C-augmented seventh chord      | V+#643
+250    | enharmonic equivalent to major triad above C# | i+#54
+251    | enharmonic equivalent to major triad above C# | i+#54
+252    | enharmonic equivalent to major seventh chord above C | i#8#54
+253    | enharmonic equivalent to major seventh chord above C | i#8#54
+254    | enharmonic equivalent to diminished triad above Bb | #vob62
+255    | enharmonic equivalent to diminished triad above Bb | #vob62
+256    | enharmonic equivalent to minor seventh chord above Bb | #ii6b52
+257    | enharmonic equivalent to minor seventh chord above Bb | #ii6b52
+258    | C-major triad                  | V
+259    | C-major triad                  | V
+260    | C-augmented major tetrachord   | V+5#5#3
+261    | C-dominant seventh chord       | V75#3
+262    | enharmonic equivalent to minor triad above F | i5#2
+263    | enharmonic equivalent to minor triad above F | i5#2
+264    | enharmonic equivalent to minor triad above F | i5#2
+265    | enharmonic equivalent to minor triad above F | i5#2
+266    | F-major triad                  | I
+267    | F-major triad                  | I
+268    | F-major triad                  | I
+269    | F-major triad                  | I
+270    | Bb-major triad                 | IV
+271    | Bb-major triad                 | IV
+272    | C-quartal tetramirror          | v743
+273    | C-quartal tetramirror          | v743
+274    | Bb-major triad                 | IV6
+275    | Bb-major triad                 | IV6
+276    | Bb-major triad                 | IV
+277    | Bb-major triad                 | IV
+278    | Eb-major triad                 | bVII
+279    | Eb-major triad                 | bVII
+280    | Eb-major seventh chord         | bVII#753
+281    | Eb-major seventh chord         | bVII#753
+282    | enharmonic equivalent to minor triad above G# | i74
+283    | enharmonic equivalent to minor triad above G# | i74
+284    | enharmonic equivalent to minor triad above G# | i74
+285    | enharmonic equivalent to minor triad above G# | i74
+286    | C-minor triad                  | v64
+287    | C-minor triad                  | v64
+288    | C-perfect-fourth minor tetrachord | v752
+289    | C-perfect-fourth minor tetrachord | v752
+290    | G-major triad                  | II
+291    | G-major triad                  | II
+292    | G-dominant seventh chord       | II7#5#3
+293    | G-dominant seventh chord       | II7#5#3
+294    | C-major triad                  | V
+295    | C-major triad                  | V
+296    | C-major triad                  | V
+297    | C-major triad                  | V
+298    | Rest                           | -
+299    | Rest                           | -
+300    | Rest                           | -
+301    | Rest                           | -
+302    | C-major triad                  | V
+303    | C-major triad                  | V
+304    | C-major triad                  | V
+305    | C-major triad                  | V
+306    | Rest                           | -
+307    | Rest                           | -
+308    | Rest                           | -
+309    | Rest                           | -
+310    | Rest                           | -
+311    | Rest                           | -
+312    | Rest                           | -
+313    | Rest                           | -
+314    | Rest                           | -
+315    | Rest                           | -
+316    | Rest                           | -
+317    | Rest                           | -
+Strong Cadences: []
+Regular Cadences: [60]

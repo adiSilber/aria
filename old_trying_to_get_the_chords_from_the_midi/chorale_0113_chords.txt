@@ -1,0 +1,463 @@
+File: jsb_chorales_midi/train_16th/chorale_0113.mid
+Key: D major
+------------------------------------------------------------
+Tick   | Chord Name                     | Function
+------------------------------------------------------------
+0      | D-major triad                  | I
+1      | D-major triad                  | I
+2      | D-major triad                  | I
+3      | D-major triad                  | I
+4      | D-major triad                  | I
+5      | D-major triad                  | I
+6      | D-major triad                  | I
+7      | D-major triad                  | I
+8      | G-major triad                  | IV
+9      | G-major triad                  | IV
+10     | G-major triad                  | IV
+11     | G-major triad                  | IV
+12     | G-major triad                  | IV
+13     | G-major triad                  | IV
+14     | G-major triad                  | IV
+15     | G-major triad                  | IV
+16     | D-major triad                  | I
+17     | D-major triad                  | I
+18     | D-major triad                  | I
+19     | D-major triad                  | I
+20     | D-major triad                  | I
+21     | D-major triad                  | I
+22     | D-major triad                  | I
+23     | D-major triad                  | I
+24     | E-minor triad                  | ii
+25     | E-minor triad                  | ii
+26     | E-minor triad                  | ii
+27     | E-minor triad                  | ii
+28     | E-minor triad                  | ii
+29     | E-minor triad                  | ii
+30     | E-minor triad                  | ii
+31     | E-minor triad                  | ii
+32     | D-major triad                  | I
+33     | D-major triad                  | I
+34     | D-major triad                  | I
+35     | D-major triad                  | I
+36     | D-major triad                  | I
+37     | D-major triad                  | I
+38     | D-major triad                  | I
+39     | D-major triad                  | I
+40     | B-minor triad                  | vi
+41     | B-minor triad                  | vi
+42     | B-minor triad                  | vi
+43     | B-minor triad                  | vi
+44     | B-minor triad                  | vi
+45     | B-minor triad                  | vi
+46     | B-minor triad                  | vi
+47     | B-minor triad                  | vi
+48     | A-major triad                  | V
+49     | A-major triad                  | V
+50     | A-major triad                  | V
+51     | A-major triad                  | V
+52     | A-major triad                  | V
+53     | A-major triad                  | V
+54     | A-major triad                  | V
+55     | A-major triad                  | V
+56     | D-major triad                  | I
+57     | D-major triad                  | I
+58     | D-major triad                  | I
+59     | D-major triad                  | I
+60     | D-major triad                  | I
+61     | D-major triad                  | I
+62     | D-major triad                  | I
+63     | D-major triad                  | I
+64     | Rest                           | -
+65     | Rest                           | -
+66     | Rest                           | -
+67     | Rest                           | -
+68     | Rest                           | -
+69     | Rest                           | -
+70     | Rest                           | -
+71     | Rest                           | -
+72     | Rest                           | -
+73     | Rest                           | -
+74     | Rest                           | -
+75     | Rest                           | -
+76     | Rest                           | -
+77     | Rest                           | -
+78     | Rest                           | -
+79     | Rest                           | -
+80     | Rest                           | -
+81     | Rest                           | -
+82     | Rest                           | -
+83     | Rest                           | -
+84     | Rest                           | -
+85     | Rest                           | -
+86     | Rest                           | -
+87     | Rest                           | -
+88     | D-major triad                  | I
+89     | D-major triad                  | I
+90     | D-major triad                  | I
+91     | D-major triad                  | I
+92     | D-major triad                  | I
+93     | D-major triad                  | I
+94     | D-major triad                  | I
+95     | D-major triad                  | I
+96     | D-major triad                  | I
+97     | D-major triad                  | I
+98     | D-major triad                  | I
+99     | D-major triad                  | I
+100    | D-major triad                  | I
+101    | D-major triad                  | I
+102    | D-major triad                  | I
+103    | D-major triad                  | I
+104    | D-major triad                  | I
+105    | D-major triad                  | I
+106    | D-major triad                  | I
+107    | D-major triad                  | I
+108    | D-major triad                  | I
+109    | D-major triad                  | I
+110    | D-major triad                  | I
+111    | D-major triad                  | I
+112    | D-major triad                  | I6
+113    | D-major triad                  | I6
+114    | D-major triad                  | I6
+115    | D-major triad                  | I6
+116    | D-major triad                  | I6
+117    | D-major triad                  | I6
+118    | D-major triad                  | I6
+119    | D-major triad                  | I6
+120    | G-major triad                  | IV
+121    | G-major triad                  | IV
+122    | G-major triad                  | IV
+123    | G-major triad                  | IV
+124    | G-major triad                  | IV
+125    | G-major triad                  | IV
+126    | G-major triad                  | IV
+127    | G-major triad                  | IV
+128    | D-major triad                  | I6
+129    | D-major triad                  | I6
+130    | D-major triad                  | I6
+131    | D-major triad                  | I6
+132    | D-major triad                  | I6
+133    | D-major triad                  | I6
+134    | D-major triad                  | I6
+135    | D-major triad                  | I6
+136    | A-major triad                  | V64
+137    | A-major triad                  | V64
+138    | A-major triad                  | V64
+139    | A-major triad                  | V64
+140    | A-major triad                  | V64
+141    | A-major triad                  | V64
+142    | A-major triad                  | V64
+143    | A-major triad                  | V64
+144    | D-major triad                  | I
+145    | D-major triad                  | I
+146    | D-major triad                  | I
+147    | D-major triad                  | I
+148    | D-major triad                  | I
+149    | D-major triad                  | I
+150    | D-major triad                  | I
+151    | D-major triad                  | I
+152    | D-major triad                  | I
+153    | D-major triad                  | I
+154    | D-major triad                  | I
+155    | D-major triad                  | I
+156    | D-major triad                  | I
+157    | D-major triad                  | I
+158    | D-major triad                  | I
+159    | D-major triad                  | I
+160    | A-major triad                  | V
+161    | A-major triad                  | V
+162    | A-major triad                  | V
+163    | A-major triad                  | V
+164    | A-major triad                  | V
+165    | A-major triad                  | V
+166    | A-major triad                  | V
+167    | A-major triad                  | V
+168    | A-major triad                  | V
+169    | A-major triad                  | V
+170    | A-major triad                  | V
+171    | A-major triad                  | V
+172    | A-major triad                  | V
+173    | A-major triad                  | V
+174    | A-major triad                  | V
+175    | A-major triad                  | V
+176    | A-major triad                  | V
+177    | A-major triad                  | V
+178    | A-major triad                  | V
+179    | A-major triad                  | V
+180    | A-major triad                  | V
+181    | A-major triad                  | V
+182    | A-major triad                  | V
+183    | A-major triad                  | V
+184    | A-major triad                  | V
+185    | A-major triad                  | V
+186    | A-major triad                  | V
+187    | A-major triad                  | V
+188    | A-major triad                  | V
+189    | A-major triad                  | V
+190    | A-major triad                  | V
+191    | A-major triad                  | V
+192    | D-major triad                  | I
+193    | D-major triad                  | I
+194    | D-major triad                  | I
+195    | D-major triad                  | I
+196    | D-major triad                  | I
+197    | D-major triad                  | I
+198    | D-major triad                  | I
+199    | D-major triad                  | I
+200    | A                              | v
+201    | A                              | v
+202    | A                              | v
+203    | A                              | v
+204    | A                              | v
+205    | A                              | v
+206    | A                              | v
+207    | A                              | v
+208    | Minor Sixth with octave doublings above F# | I6
+209    | Minor Sixth with octave doublings above F# | I6
+210    | Minor Sixth with octave doublings above F# | I6
+211    | Minor Sixth with octave doublings above F# | I6
+212    | Minor Sixth with octave doublings above F# | I6
+213    | Minor Sixth with octave doublings above F# | I6
+214    | Minor Sixth with octave doublings above F# | I6
+215    | Minor Sixth with octave doublings above F# | I6
+216    | G-major triad                  | IV
+217    | G-major triad                  | IV
+218    | G-major triad                  | IV
+219    | G-major triad                  | IV
+220    | G-major triad                  | IV
+221    | G-major triad                  | IV
+222    | G-major triad                  | IV
+223    | G-major triad                  | IV
+224    | D-major triad                  | I6
+225    | D-major triad                  | I6
+226    | D-major triad                  | I6
+227    | D-major triad                  | I6
+228    | D-major triad                  | I6
+229    | D-major triad                  | I6
+230    | D-major triad                  | I6
+231    | D-major triad                  | I6
+232    | C#-diminished triad            | viio6
+233    | C#-diminished triad            | viio6
+234    | C#-diminished triad            | viio6
+235    | C#-diminished triad            | viio6
+236    | C#-diminished triad            | viio6
+237    | C#-diminished triad            | viio6
+238    | C#-diminished triad            | viio6
+239    | C#-diminished triad            | viio6
+240    | D-major triad                  | I
+241    | D-major triad                  | I
+242    | D-major triad                  | I
+243    | D-major triad                  | I
+244    | D-major triad                  | I
+245    | D-major triad                  | I
+246    | D-major triad                  | I
+247    | D-major triad                  | I
+248    | A-major triad                  | V
+249    | A-major triad                  | V
+250    | A-major triad                  | V
+251    | A-major triad                  | V
+252    | A-major triad                  | V
+253    | A-major triad                  | V
+254    | A-major triad                  | V
+255    | A-major triad                  | V
+256    | Rest                           | -
+257    | Rest                           | -
+258    | Rest                           | -
+259    | Rest                           | -
+260    | Rest                           | -
+261    | Rest                           | -
+262    | Rest                           | -
+263    | Rest                           | -
+264    | Rest                           | -
+265    | Rest                           | -
+266    | Rest                           | -
+267    | Rest                           | -
+268    | Rest                           | -
+269    | Rest                           | -
+270    | Rest                           | -
+271    | Rest                           | -
+272    | Rest                           | -
+273    | Rest                           | -
+274    | Rest                           | -
+275    | Rest                           | -
+276    | Rest                           | -
+277    | Rest                           | -
+278    | Rest                           | -
+279    | Rest                           | -
+280    | A-major triad                  | V
+281    | A-major triad                  | V
+282    | A-major triad                  | V
+283    | A-major triad                  | V
+284    | A-major triad                  | V
+285    | A-major triad                  | V
+286    | A-major triad                  | V
+287    | A-major triad                  | V
+288    | A-major triad                  | V
+289    | A-major triad                  | V
+290    | A-major triad                  | V
+291    | A-major triad                  | V
+292    | A-major triad                  | V
+293    | A-major triad                  | V
+294    | A-major triad                  | V
+295    | A-major triad                  | V
+296    | A-major triad                  | V
+297    | A-major triad                  | V
+298    | A-major triad                  | V
+299    | A-major triad                  | V
+300    | A-major triad                  | V
+301    | A-major triad                  | V
+302    | A-major triad                  | V
+303    | A-major triad                  | V
+304    | Minor Sixth with octave doublings above F# | I6
+305    | Minor Sixth with octave doublings above F# | I6
+306    | Minor Sixth with octave doublings above F# | I6
+307    | Minor Sixth with octave doublings above F# | I6
+308    | Minor Sixth with octave doublings above F# | I6
+309    | Minor Sixth with octave doublings above F# | I6
+310    | Minor Sixth with octave doublings above F# | I6
+311    | Minor Sixth with octave doublings above F# | I6
+312    | G-major triad                  | IV
+313    | G-major triad                  | IV
+314    | G-major triad                  | IV
+315    | G-major triad                  | IV
+316    | G-major triad                  | IV
+317    | G-major triad                  | IV
+318    | G-major triad                  | IV
+319    | G-major triad                  | IV
+320    | G-major triad                  | IV6
+321    | G-major triad                  | IV6
+322    | G-major triad                  | IV6
+323    | G-major triad                  | IV6
+324    | G-major triad                  | IV6
+325    | G-major triad                  | IV6
+326    | G-major triad                  | IV6
+327    | G-major triad                  | IV6
+328    | D                              | i
+329    | D                              | i
+330    | D                              | i
+331    | D                              | i
+332    | D                              | i
+333    | D                              | i
+334    | D                              | i
+335    | D                              | i
+336    | D                              | i
+337    | D                              | i
+338    | D                              | i
+339    | D                              | i
+340    | D                              | i
+341    | D                              | i
+342    | D                              | i
+343    | D                              | i
+344    | D                              | i
+345    | D                              | i
+346    | D                              | i
+347    | D                              | i
+348    | D                              | i
+349    | D                              | i
+350    | D                              | i
+351    | D                              | i
+352    | Major Third with octave doublings above G | IV
+353    | Major Third with octave doublings above G | IV
+354    | Major Third with octave doublings above G | IV
+355    | Major Third with octave doublings above G | IV
+356    | Major Third with octave doublings above G | IV
+357    | Major Third with octave doublings above G | IV
+358    | Major Third with octave doublings above G | IV
+359    | Major Third with octave doublings above G | IV
+360    | Major Third with octave doublings above G | IV
+361    | Major Third with octave doublings above G | IV
+362    | Major Third with octave doublings above G | IV
+363    | Major Third with octave doublings above G | IV
+364    | Major Third with octave doublings above G | IV
+365    | Major Third with octave doublings above G | IV
+366    | Major Third with octave doublings above G | IV
+367    | Major Third with octave doublings above G | IV
+368    | D-major triad                  | I
+369    | D-major triad                  | I
+370    | D-major triad                  | I
+371    | D-major triad                  | I
+372    | D-major triad                  | I
+373    | D-major triad                  | I
+374    | D-major triad                  | I
+375    | D-major triad                  | I
+376    | A-major triad                  | V6
+377    | A-major triad                  | V6
+378    | A-major triad                  | V6
+379    | A-major triad                  | V6
+380    | A-major triad                  | V6
+381    | A-major triad                  | V6
+382    | A-major triad                  | V6
+383    | A-major triad                  | V6
+384    | D-major triad                  | I
+385    | D-major triad                  | I
+386    | D-major triad                  | I
+387    | D-major triad                  | I
+388    | D-major triad                  | I
+389    | D-major triad                  | I
+390    | D-major triad                  | I
+391    | D-major triad                  | I
+392    | E-quartal tetramirror          | ii652
+393    | E-quartal tetramirror          | ii652
+394    | E-quartal tetramirror          | ii652
+395    | E-quartal tetramirror          | ii652
+396    | E-quartal tetramirror          | ii652
+397    | E-quartal tetramirror          | ii652
+398    | E-quartal tetramirror          | ii652
+399    | E-quartal tetramirror          | ii652
+400    | A                              | v
+401    | A                              | v
+402    | A                              | v
+403    | A                              | v
+404    | A                              | v
+405    | A                              | v
+406    | A                              | v
+407    | A                              | v
+408    | A                              | v
+409    | A                              | v
+410    | A                              | v
+411    | A                              | v
+412    | A                              | v
+413    | A                              | v
+414    | A                              | v
+415    | A                              | v
+416    | A                              | v
+417    | A                              | v
+418    | A                              | v
+419    | A                              | v
+420    | A                              | v
+421    | A                              | v
+422    | A                              | v
+423    | A                              | v
+424    | C#-diminished triad            | viio64
+425    | C#-diminished triad            | viio64
+426    | C#-diminished triad            | viio64
+427    | C#-diminished triad            | viio64
+428    | C#-diminished triad            | viio64
+429    | C#-diminished triad            | viio64
+430    | C#-diminished triad            | viio64
+431    | C#-diminished triad            | viio64
+432    | Major Third with octave doublings above D | I
+433    | Major Third with octave doublings above D | I
+434    | Major Third with octave doublings above D | I
+435    | Major Third with octave doublings above D | I
+436    | Major Third with octave doublings above D | I
+437    | Major Third with octave doublings above D | I
+438    | Major Third with octave doublings above D | I
+439    | Major Third with octave doublings above D | I
+440    | Major Third with octave doublings above D | I
+441    | Major Third with octave doublings above D | I
+442    | Major Third with octave doublings above D | I
+443    | Major Third with octave doublings above D | I
+444    | Major Third with octave doublings above D | I
+445    | Major Third with octave doublings above D | I
+446    | Major Third with octave doublings above D | I
+447    | Major Third with octave doublings above D | I
+448    | Rest                           | -
+449    | Rest                           | -
+450    | Rest                           | -
+451    | Rest                           | -
+452    | Rest                           | -
+453    | Rest                           | -
+454    | Rest                           | -
+455    | Rest                           | -
+Strong Cadences: [56, 144, 192, 304, 384]
+Regular Cadences: []
