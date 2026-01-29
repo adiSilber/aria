@@ -1,0 +1,18 @@
+{
+  "name": "test_single_chorale",
+  "timestamp": "20260129_120305",
+  "data_dir": "/tmp/claude/-home-adisi-repos-py-aria/41164231-2c36-4f6e-bf57-156da4dec3d3/scratchpad/test_data",
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "continuation_seconds": 5.0,
+  "temp": 0.8,
+  "min_p": 0.035,
+  "backend": "torch_cuda",
+  "checkpoint": "config/models/aria-medium-base/model-gen.safetensors",
+  "prompt_duration": 999999,
+  "min_gen_length": 50,
+  "max_gen_length": 500
+}
