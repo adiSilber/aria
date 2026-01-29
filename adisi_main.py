@@ -12,10 +12,53 @@ import mido
 
 
 
+def _get_sounding_notes_per_16th(midi_path):
+    """
+    Use mido to accurately determine which MIDI notes are sounding at each
+    16th-note position. Returns a list of sorted MIDI note lists, one per 16th.
+    This bypasses music21's unreliable single-track polyphonic MIDI parsing.
+    """
+    mid = mido.MidiFile(midi_path)
+    ticks_per_16th = mid.ticks_per_beat / 4.0
+
+    # Collect all note on/off events with absolute tick times
+    events = []
+    for track in mid.tracks:
+        abs_time = 0
+        for msg in track:
+            abs_time += msg.time
+            if msg.type == 'note_on' and msg.velocity > 0:
+                events.append(('on', abs_time, msg.note))
+            elif msg.type == 'note_off' or (msg.type == 'note_on' and msg.velocity == 0):
+                events.append(('off', abs_time, msg.note))
+    # Process note-offs before note-ons at the same tick
+    events.sort(key=lambda x: (x[1], 0 if x[0] == 'off' else 1))
+
+    # Find the last event tick to determine total duration
+    last_tick = max(t for _, t, _ in events) if events else 0
+    total_16ths = int(round(last_tick / ticks_per_16th))
+
+    # Build active notes at each 16th position
+    result = []
+    for tick_16th in range(total_16ths):
+        target_tick = int(tick_16th * ticks_per_16th)
+        active = set()
+        for typ, t, n in events:
+            if t > target_tick:
+                break
+            if typ == 'on':
+                active.add(n)
+            elif typ == 'off':
+                active.discard(n)
+        result.append(sorted(active))
+
+    return result, total_16ths
+
+
 def save_harmonic_analysis(input_path, output_filename):
     """
     Analyze harmonic structure from MIDI or MusicXML files.
-    
+
     Args:
         input_path: Path to MIDI (.mid) or MusicXML (.musicxml, .xml, .mxl) file
         output_filename: Path to output text file with harmonic analysis
@@ -31,32 +74,39 @@ def save_harmonic_analysis(input_path, output_filename):
         else:
             file_type = "unknown"
             print(f"Warning: Unknown file extension {file_ext}, attempting to parse anyway...")
-        
+
         print(f"Loading {file_type} file: {input_path}")
+
+        # Use music21 only for key detection
         score = converter.parse(input_path)
-            
         key = score.analyze('key')
-        
+
         # if key is minor i want to return false and not procces the file
         if key.mode.lower() == "minor":
             print(f"Skipping {input_path}: Key is minor.")
             return False
 
+        # 2. Use mido for accurate note extraction (bypasses music21 MIDI parsing bugs)
+        if file_type == "MIDI":
+            sounding_notes, total_16ths = _get_sounding_notes_per_16th(input_path)
+        else:
+            # For MusicXML, music21 parsing works correctly, so use the old approach
+            chords_stream = score.chordify().flatten().getElementsByClass('Chord')
+            total_16ths = int(round(score.duration.quarterLength * 4))
+            sounding_notes = None
 
-        # 2. Flatten and Chordify (Essential to catch all voices)
-        # We strip the stream to just chords to make lookups faster
-        chords_stream = score.chordify().flat.getElementsByClass('Chord')
-        i = 0
-        for element in chords_stream:
-            i += 1
-            # check that the chord has at least 3 notes
-            if len(element.pitches) < 3:
-                print(f"Skipping {input_path}: Found chord with less than 3 notes ({len(element.pitches)} notes)")
-                return False
+        # 3. Validate: check that every position has at least 3 notes
+        if sounding_notes is not None:
+            for tick_idx, notes in enumerate(sounding_notes):
+                if len(notes) < 3:
+                    print(f"Skipping {input_path}: Found chord with less than 3 notes ({len(notes)} notes) at 16th={tick_idx}")
+                    return False
+        else:
+            for element in chords_stream:
+                if len(element.pitches) < 3:
+                    print(f"Skipping {input_path}: Found chord with less than 3 notes ({len(element.pitches)} notes)")
+                    return False
 
-        # 3. Calculate total ticks (16th notes)
-        total_16ths = int(round(score.duration.quarterLength * 4))
-        
         print(f"Processing {total_16ths} time steps...")
 
         with open(output_filename, 'w') as f:
@@ -70,24 +120,28 @@ def save_harmonic_analysis(input_path, output_filename):
 
             # 4. Iterate through every single 16th note tick
             for tick in range(total_16ths):
-                # Convert tick -> quarters
-                current_offset = tick / 4.0
-                
-                # Get the specific chord active at this exact offset
-                # We use getElementAtOrBefore to handle chords that started earlier
-                element = chords_stream.getElementAtOrBefore(current_offset)
-                
                 chord_name = "Rest"
                 func = "-"
 
-                if element:
-                    # Check if the chord is actually still sustaining
-                    chord_end = element.offset + element.duration.quarterLength
-                    # Using a tiny epsilon (0.001) handles floating point overlap issues
-                    if chord_end > current_offset + 0.001:
-                        rn = roman.romanNumeralFromChord(element, key)
-                        chord_name = element.pitchedCommonName
+                if sounding_notes is not None:
+                    # MIDI path: build chord from mido's accurate note data
+                    midi_notes = sounding_notes[tick]
+                    if midi_notes:
+                        pitches_list = [pitch.Pitch(midi=m) for m in midi_notes]
+                        c = chord.Chord(pitches_list)
+                        rn = roman.romanNumeralFromChord(c, key)
+                        chord_name = c.pitchedCommonName
                         func = rn.figure
+                else:
+                    # MusicXML path: use music21's chordify (works fine for XML)
+                    current_offset = tick / 4.0
+                    element = chords_stream.getElementAtOrBefore(current_offset)
+                    if element:
+                        chord_end = element.offset + element.duration.quarterLength
+                        if chord_end > current_offset + 0.001:
+                            rn = roman.romanNumeralFromChord(element, key)
+                            chord_name = element.pitchedCommonName
+                            func = rn.figure
 
                 # if chord_name is Rest, delete the whole file f and return
                 if chord_name == 'Rest':
@@ -103,10 +157,11 @@ def save_harmonic_analysis(input_path, output_filename):
         print(f"An error occurred: {e}")
 
 # --- Run the function above ---
-# save_harmonic_analysis(
-#     'chorale_0001.musicxml',
-#     'sixteenth_chords.txt'
-# )
+save_harmonic_analysis(
+    # 'chorale_0001.musicxml',
+    'jsb_chorales_midi/train_16th/chorale_0001.mid',
+    'sixteenth_chords.txt'
+)
 
 
 from typing import List, Dict
