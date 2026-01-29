@@ -157,11 +157,11 @@ def save_harmonic_analysis(input_path, output_filename):
         print(f"An error occurred: {e}")
 
 # --- Run the function above ---
-save_harmonic_analysis(
-    # 'chorale_0001.musicxml',
-    'jsb_chorales_midi/train_16th/chorale_0001.mid',
-    'sixteenth_chords.txt'
-)
+# save_harmonic_analysis(
+#     # 'chorale_0001.musicxml',
+#     'jsb_chorales_midi/train_16th/chorale_0001.mid',
+#     'sixteenth_chords.txt'
+# )
 
 
 from typing import List, Dict
@@ -294,7 +294,7 @@ def save_cadences_to_input_file(input_file):
 def run_process_on_all_midi_files_in_directory(input_directory, output_directory):
     ordered_files = sorted(os.listdir(input_directory))
     for file in ordered_files:
-        if file.endswith('.musicxml'):
+        if file.endswith('.mid'):
             input_file = os.path.join(input_directory, file)
             chords_file_path = os.path.join(output_directory, f"{file.split('.')[0]}_chords.txt")
             save_harmonic_analysis(input_file, chords_file_path)
@@ -304,8 +304,7 @@ def run_process_on_all_midi_files_in_directory(input_directory, output_directory
 
 
 # adisi first I made this running:
-# run_processs_on_all_midi_files_in_directory('jsb_chorales_xml/train_16th', 'trying_to_get_the_chords_from_the_midi')
-
+# run_process_on_all_midi_files_in_directory('jsb_chorales_midi/train_16th', 'trying_to_get_the_chords_from_the_midi')
 
 
 
@@ -445,83 +444,100 @@ def run_process_cadence_cuts_raw_on_all_midi_files_in_directory(input_directory,
 def make_dominant_minor(midi_path: str, output_path: str):
     """
     Lowers the Major 3rd of the final V chord to a Minor 3rd.
-    Preserves the original VELOCITY of the notes/chords.
+    Uses mido for reading/writing to preserve the original MIDI exactly,
+    and music21 only for chord analysis (finding the major 3rd).
     """
     try:
-        score = converter.parse(midi_path)
+        mid = mido.MidiFile(midi_path)
     except Exception as e:
         print(f"Failed to load {midi_path}: {e}")
         return
 
-    # 1. IDENTIFY THE TARGET PITCH
-    chord_stream = score.chordify().flat.getElementsByClass('Chord')
-    if not chord_stream:
-        print("Error: No chords found.")
+    # 1. FIND THE LAST CHORD'S NOTES using raw MIDI events
+    # Collect all note on/off events with absolute times
+    events = []
+    for track in mid.tracks:
+        abs_time = 0
+        for msg in track:
+            abs_time += msg.time
+            if msg.type == 'note_on' and msg.velocity > 0:
+                events.append(('on', abs_time, msg.note))
+            elif msg.type == 'note_off' or (msg.type == 'note_on' and msg.velocity == 0):
+                events.append(('off', abs_time, msg.note))
+    events.sort(key=lambda x: (x[1], 0 if x[0] == 'off' else 1))
+
+    if not events:
+        print("Error: No notes found.")
         return
 
-    last_chord = chord_stream[-1]
-    root = last_chord.root()
-    
-    target_pitch_name = None
-    for p in last_chord.pitches:
-        inter = interval.Interval(noteStart=root, noteEnd=p)
-        if inter.simpleName == 'M3':
-            target_pitch_name = p.name
+    # The last chord = all notes sounding at the end of the file
+    # (just before the final note-offs), not just notes at the last onset
+    last_event_time = max(t for _, t, _ in events)
+    active = set()
+    for typ, t, n in events:
+        if t >= last_event_time:
             break
-            
-    if not target_pitch_name:
+        if typ == 'on':
+            active.add(n)
+        elif typ == 'off':
+            active.discard(n)
+    last_chord_midi = sorted(active)
+
+    # Find the onset time of the earliest note in this final chord,
+    # so we know from where to start modifying
+    last_chord_set = set(last_chord_midi)
+    # For each note in the chord, find when it last started (before the end)
+    note_onset_times = {}
+    for typ, t, n in events:
+        if t >= last_event_time:
+            break
+        if typ == 'on' and n in last_chord_set:
+            note_onset_times[n] = t
+    earliest_chord_onset = min(note_onset_times.values()) if note_onset_times else last_event_time
+
+    # 2. USE MUSIC21 ONLY TO IDENTIFY THE MAJOR 3RD
+    c = chord.Chord([pitch.Pitch(midi=m) for m in last_chord_midi])
+    root = c.root()
+    target_midi_class = None  # pitch class (0-11) of the note to lower
+    # Use pitch class distance (mod 12) instead of directional interval,
+    # because notes below the root give descending intervals (e.g. m6 instead of M3)
+    for p in c.pitches:
+        semitones_from_root = (p.pitchClass - root.pitchClass) % 12
+        if semitones_from_root == 4:  # 4 semitones = Major 3rd
+            target_midi_class = p.midi % 12
+            break
+
+    if target_midi_class is None:
         print(f"No Major 3rd found in {os.path.basename(midi_path)}.")
         return
 
-    print(f"Processing {os.path.basename(midi_path)} (Target: {target_pitch_name})...")
-    final_chord_onset = last_chord.offset
-    
-    # 2. MODIFY SCORE WITH VELOCITY PRESERVATION
-    for part in score.parts:
-        for element in part.flat.notes:
-            
-            # Check overlap logic
-            element_end = element.offset + element.duration.quarterLength
-            if element_end > final_chord_onset:
-                
-                # --- CAPTURE ORIGINAL VELOCITY ---
-                # If velocity is missing (None), default to generic 64 to be safe, 
-                # but usually it's an int.
-                original_velocity = element.volume.velocity
-                if original_velocity is None:
-                    original_velocity = 64
-                
-                # --- CASE A: Single Note ---
-                if element.isNote:
-                    if element.name == target_pitch_name:
-                        element.transpose(-1, inPlace=True)
-                        
-                        # FORCE RESTORE VELOCITY
-                        element.volume.velocity = original_velocity
-                        print(f"  -> Modified Note {target_pitch_name} (Vel: {original_velocity})")
+    # Find the exact MIDI note number(s) to change in the last chord
+    target_notes = [n for n in last_chord_midi if n % 12 == target_midi_class]
+    # For each target note, find its last onset time (the one sounding in the final chord)
+    target_note_onsets = {}
+    for typ, t, n in events:
+        if t >= last_event_time:
+            break
+        if typ == 'on' and n in target_notes:
+            target_note_onsets[n] = t
+    print(f"Processing {os.path.basename(midi_path)} (Lowering MIDI notes {target_notes} by 1 semitone, onsets {target_note_onsets})...")
 
-                # --- CASE B: Chord ---
-                elif element.isChord:
-                    new_pitches = []
-                    changed = False
-                    
-                    for p in element.pitches:
-                        if p.name == target_pitch_name:
-                            new_p = p.transpose(-1)
-                            new_pitches.append(new_p)
-                            changed = True
-                        else:
-                            new_pitches.append(p)
-                    
-                    if changed:
-                        element.pitches = tuple(new_pitches)
-                        
-                        # FORCE RESTORE VELOCITY
-                        # (Reassigning pitches often resets volume in music21)
-                        element.volume.velocity = original_velocity
-                        print(f"  -> Modified Chord (Vel: {original_velocity})")
+    # 3. MODIFY USING MIDO — only change each target note at/after its own last onset
+    new_mid = mido.MidiFile(ticks_per_beat=mid.ticks_per_beat)
+    for track in mid.tracks:
+        new_track = mido.MidiTrack()
+        abs_time = 0
+        for msg in track:
+            abs_time += msg.time
+            if (msg.type in ('note_on', 'note_off')
+                    and msg.note in target_note_onsets
+                    and abs_time >= target_note_onsets[msg.note]):
+                new_track.append(msg.copy(note=msg.note - 1))
+            else:
+                new_track.append(msg.copy())
+        new_mid.tracks.append(new_track)
 
-    score.write('midi', fp=output_path)
+    new_mid.save(output_path)
     print(f"Saved: {output_path}\n")
 
 
@@ -546,4 +562,4 @@ def run_process_all_cuts_on_all_midi_files_in_directory(input_directory):
         print(f"Processed: {directory} with all its cuts")
 
 # adisi third I made this running:
-# run_process_all_cuts_on_all_midi_files_in_directory('trying_to_get_the_chords_from_the_midi')
+run_process_all_cuts_on_all_midi_files_in_directory('trying_to_get_the_chords_from_the_midi')
