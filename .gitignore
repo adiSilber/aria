@@ -204,3 +204,8 @@ per_midi_json/*
 !per_midi_json/.gitkeep
 config/models/aria-medium-gen/*
 !config/models/aria-medium-gen/.gitkeep
+experiments/20260129_122947_minorized_cadences/*
+!experiments/20260129_122947_minorized_cadences/.gitkeep
+experiments/20260129_122947_minorized_cadences_backup/*
+!experiments/20260129_122947_minorized_cadences_backup/.gitkeep
+
